@@ -1,0 +1,31 @@
+{
+  "name": "full-stack-crud",
+  "version": "1.0.0",
+  "description": "Initial Commit",
+  "main": "index.js",
+  "scripts": {
+    "dev":"nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "mongodb",
+    "expressjs",
+    "reactjs",
+    "jwt",
+    "bcrypt",
+    "dotenv"
+  ],
+  "author": "Souvik Goswami",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.5"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.7",
+    "nodemon": "^3.1.9"
+  }
+}
