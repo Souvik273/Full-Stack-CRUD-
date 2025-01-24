@@ -7,7 +7,7 @@ const app = express()
 
 app.use(express.json({limit:'16kb'}))
 app.use(cors({
-    origin:"http://localhost:5173",
+    origin:"https://full-stack-crud-672b.onrender.com",
     optionsSuccessStatus:200
 }))
 
