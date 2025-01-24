@@ -1,7 +1,10 @@
-import axios from "axios"
-import { useState } from "react"
+import axios from "axios";
+import { useState } from "react";
+import { Link } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 const LogIn = ()=>{
+    const navigate = useNavigate();
     const [loginData , setLoginData] = useState({email:"",pass:""})
 
     const handleSubmit = (e)=>{
@@ -13,6 +16,7 @@ const LogIn = ()=>{
         .then((res) => {
             localStorage.setItem("accessToken", res.data.token)
             console.log(res.data)
+            navigate("/create-note");
         })
         .catch(err=>console.log(err.response.data))
     }
@@ -23,11 +27,12 @@ const LogIn = ()=>{
             <form onSubmit={handleSubmit}>
                 <input type="email" placeholder="email" onChange={(e)=>setLoginData((prev)=>({...prev,email:e.target.value}))}/>
                 <input type="password" placeholder="password" onChange={(e)=>setLoginData((prev)=>({...prev,pass:e.target.value}))}/>
+                <p>Dont have account ? <Link to={"/SignUp"}>SignUp</Link></p>
                 <input type="submit" placeholder="Submit"/>
             </form>
         </>
     )
 }
 
-export { LogIn }
+export { LogIn };
 
