@@ -1,4 +1,5 @@
 import axios from 'axios';
+import env from "dotenv";
 import { useState } from "react";
 
 const SignUp = ()=>{
@@ -9,7 +10,7 @@ const SignUp = ()=>{
     })
     const handleSubmit = ()=>{
         console.log(userData)
-        axios.post('https://full-stack-crud-672b.onrender.com/users', userData)
+        axios.post(`${env.BACKEND_URL}/users`, userData)
           .then(function (response) {
             console.log(response.data);
           })

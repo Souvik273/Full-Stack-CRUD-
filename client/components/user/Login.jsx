@@ -1,4 +1,5 @@
 import axios from "axios";
+import env from "dotenv";
 import { useState } from "react";
 import { Link } from "react-router";
 import { useNavigate } from "react-router-dom";
@@ -11,7 +12,7 @@ const LogIn = ()=>{
         e.preventDefault()
         console.log(loginData)
 
-        axios.post(`https://full-stack-crud-672b.onrender.com/users/login`,
+        axios.post(`${env.BACKEND_URL}/users/login`,
         loginData)
         .then((res) => {
             localStorage.setItem("accessToken", res.data.token)

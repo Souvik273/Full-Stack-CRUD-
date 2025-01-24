@@ -1,4 +1,5 @@
 import axios from "axios";
+import env from "dotenv";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -16,7 +17,7 @@ const Dashboard = () => {
   useEffect(() => {
     // Fetch notes from the server
     axios
-      .get("https://full-stack-crud-672b.onrender.com/notes/", {
+      .get(`${env.BACKEND_URL}/notes/`, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
@@ -30,7 +31,7 @@ const Dashboard = () => {
 
   const handleDelete = (noteId) => {
     axios
-      .delete(`https://full-stack-crud-672b.onrender.com/notes/${noteId}`, {
+      .delete(`${env.BACKEND_URL}/notes/${noteId}`, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
@@ -45,7 +46,7 @@ const Dashboard = () => {
   const handleEdit = (noteId) => {
     axios
       .patch(
-        `https://full-stack-crud-672b.onrender.com/notes/${noteId}`,
+        `${env.BACKEND_URL}/notes/${noteId}`,
         updatedData, // Send updated data to the server
         {
           headers: {

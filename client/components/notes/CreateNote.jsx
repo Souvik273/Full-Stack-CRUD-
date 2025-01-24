@@ -1,4 +1,5 @@
 import axios from "axios"
+import env from "dotenv"
 import { useState } from "react"
 import { Link } from "react-router-dom"
 
@@ -11,7 +12,7 @@ const CreateNote = ()=>{
         console.log(note)
         const accessToken = localStorage.getItem("accessToken")
 
-        axios.post("https://full-stack-crud-672b.onrender.com/notes/",
+        axios.post(`${env.BACKEND_URL}/notes/`,
             note,
             {headers:{
                 "Authorization": `Bearer ${accessToken}`
