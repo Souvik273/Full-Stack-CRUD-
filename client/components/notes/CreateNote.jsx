@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 const CreateNote = ()=>{
 
@@ -32,6 +33,8 @@ const CreateNote = ()=>{
             <textarea placeholder="Enter Your Note Here" onChange={(e)=>setNote((prev)=>({...prev,desc:e.target.value}))}></textarea>
 
             <button onClick={handleSubmit}>Cretae Note</button>
+
+            <Link to={"/dashboard"}>Dashboard</Link>
         </>
     )
 }
