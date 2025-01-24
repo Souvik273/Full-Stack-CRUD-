@@ -1,0 +1,5 @@
+MONGO_URI=mongodb_atlas_uri
+DB_NAME=YOUR-DB-NAME
+SALT_ROUND=10
+SECRET_KEY=your-own-secret-key
+PORT=3000
