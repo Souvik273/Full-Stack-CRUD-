@@ -8,6 +8,8 @@ const app = express()
 app.use(express.json({limit:'16kb'}))
 app.use(cors({
     origin:"https://full-stack-crud-672b.onrender.com",
+    methods:['GET','PUT','POST','DELETE','PATCH'],
+    credentials:true,
     optionsSuccessStatus:200
 }))
 
