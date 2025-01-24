@@ -31,6 +31,9 @@ Router.get('/', auth, async (req, res) => {
 Router.patch('/:noteId', auth, async(req, res) => {
   const {noteId} = req.params
   const note = await Note.findOne({_id:noteId})
+  if(!note){
+    return res.status(404).json({msg:`note with id :${noteId} not present!!!`})
+  }
   try {
     if(note.userId.toString() === req.body.userId){
       await Note.findByIdAndUpdate({_id:noteId},req.body)
@@ -46,6 +49,9 @@ Router.patch('/:noteId', auth, async(req, res) => {
 Router.delete('/:noteId', auth, async(req, res) => {
   const {noteId} = req.params
   const note = await Note.findOne({_id:noteId})
+  if(!note){
+    return res.status(404).json({msg:`note with id :${noteId} not present!!!`})
+  }
   try {
     if(note.userId.toString() === req.body.userId){
       await Note.findByIdAndDelete({_id:noteId})
