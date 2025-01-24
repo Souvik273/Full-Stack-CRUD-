@@ -10,10 +10,9 @@ const userSchema = new mongoose.Schema(
 );
 
 userSchema.virtual('notes', {
-  ref: 'note',
+  ref: 'Note', // Match the model name used in mongoose.model
   localField: '_id',
   foreignField: 'userId',
 });
 
-const User = mongoose.model('User', userSchema);
-module.exports = User;
+module.exports = mongoose.model('User', userSchema);
