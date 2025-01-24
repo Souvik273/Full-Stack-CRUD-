@@ -80,7 +80,7 @@ Router.get('/user-details', async (req, res) => {
 
 // Get single user all details, including notes
 Router.get('/:userId', auth, async (req, res) => {
-  const { userId } = req.body;
+  const { userId } = req.params;
   const { username, email } = req.body; 
 
   if (!username || !email) {
