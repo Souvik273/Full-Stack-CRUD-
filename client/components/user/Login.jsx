@@ -16,7 +16,7 @@ const LogIn = ()=>{
         .then((res) => {
             localStorage.setItem("accessToken", res.data.token)
             console.log(res.data)
-            navigate("/create-note");
+            navigate("/dashboard");
         })
         .catch(err=>console.log(err.response.data))
     }
