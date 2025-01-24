@@ -9,7 +9,7 @@ const SignUp = ()=>{
     })
     const handleSubmit = ()=>{
         console.log(userData)
-        axios.post('http://localhost:3000/users', userData)
+        axios.post('https://full-stack-crud-672b.onrender.com/users', userData)
           .then(function (response) {
             console.log(response.data);
           })

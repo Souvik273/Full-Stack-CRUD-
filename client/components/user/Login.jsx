@@ -11,7 +11,7 @@ const LogIn = ()=>{
         e.preventDefault()
         console.log(loginData)
 
-        axios.post(`http://localhost:3000/users/login`,
+        axios.post(`https://full-stack-crud-672b.onrender.com/users/login`,
         loginData)
         .then((res) => {
             localStorage.setItem("accessToken", res.data.token)

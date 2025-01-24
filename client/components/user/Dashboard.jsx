@@ -16,7 +16,7 @@ const Dashboard = () => {
   useEffect(() => {
     // Fetch notes from the server
     axios
-      .get("http://localhost:3000/notes/", {
+      .get("https://full-stack-crud-672b.onrender.com/notes/", {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
@@ -30,7 +30,7 @@ const Dashboard = () => {
 
   const handleDelete = (noteId) => {
     axios
-      .delete(`http://localhost:3000/notes/${noteId}`, {
+      .delete(`https://full-stack-crud-672b.onrender.com/notes/${noteId}`, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
@@ -45,7 +45,7 @@ const Dashboard = () => {
   const handleEdit = (noteId) => {
     axios
       .patch(
-        `http://localhost:3000/notes/${noteId}`,
+        `https://full-stack-crud-672b.onrender.com/notes/${noteId}`,
         updatedData, // Send updated data to the server
         {
           headers: {

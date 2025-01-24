@@ -11,7 +11,7 @@ const CreateNote = ()=>{
         console.log(note)
         const accessToken = localStorage.getItem("accessToken")
 
-        axios.post("http://localhost:3000/notes/",
+        axios.post("https://full-stack-crud-672b.onrender.com/notes/",
             note,
             {headers:{
                 "Authorization": `Bearer ${accessToken}`
